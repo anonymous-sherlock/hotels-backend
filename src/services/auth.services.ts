@@ -33,8 +33,6 @@ export const login = async (req: express.Request, res: express.Response) => {
       expiresIn: '1h',
     });
 
-    console.log(token);
-
     res
       .cookie('auth-token', token, {
         maxAge: 1000 * 60 * 60 * 24 * 7,
