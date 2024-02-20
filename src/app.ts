@@ -9,6 +9,7 @@ import http from 'http';
 import httpErrors from 'http-errors';
 import { DEFAULT_ROUTES } from './constant/routes';
 import hotelsRouter from './routers/hotels.router';
+import multer from 'multer';
 
 const PORT: number | string = process.env.PORT || 5000;
 const app: express.Express = express();
@@ -19,13 +20,11 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: true }));
+multer();
 
 app.get('/', async (req, res, next) => {
-  // res.status(200).json({ success: 'API Service Running perfectly' });
-  // await db.hotel.createMany({
-  //   data: DUMMY_HOTELS,
-  // });
   res.status(200).json(DEFAULT_ROUTES);
 });
 

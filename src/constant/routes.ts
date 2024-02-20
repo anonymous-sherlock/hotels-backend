@@ -12,10 +12,25 @@ export const DEFAULT_ROUTES = {
     },
   },
   hotels: {
+    create: {
+      url: `${appUrl}/api/v1/hotels`,
+      method: 'POST',
+      fields: {
+        name: 'required',
+        description: 'optional',
+        address: 'required',
+        phone_number: 'required',
+        website: 'optional',
+        images: 'array of image url',
+        rating: 'optional',
+        amenities: 'array of amenities',
+      },
+    },
     'Get Hotels': {
       url: `${appUrl}/api/v1/hotels`,
       method: 'GET',
       'Query Params': {
+        q: 'text',
         limit: 'number',
         page: 'number',
       },
@@ -26,10 +41,6 @@ export const DEFAULT_ROUTES = {
       params: {
         id: 'string',
       },
-    },
-    create: {
-      url: `${appUrl}/api/v1/hotels`,
-      method: 'POST',
     },
   },
 };
