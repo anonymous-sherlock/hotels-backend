@@ -12,12 +12,19 @@ export const DEFAULT_ROUTES = {
     },
   },
   hotels: {
-    get: {
+    'Get Hotels': {
       url: `${appUrl}/api/v1/hotels`,
       method: 'GET',
-      params: {
+      'Query Params': {
         limit: 'number',
         page: 'number',
+      },
+    },
+    'Get Single Hotel': {
+      url: `${appUrl}/api/v1/hotels/:id`,
+      method: 'GET',
+      params: {
+        id: 'string',
       },
     },
     create: {
