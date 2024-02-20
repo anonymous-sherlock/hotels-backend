@@ -1,7 +1,8 @@
 {
   "name": "hotel-backend",
-  "version": "1.0.0",
+  "version": "1.0.01",
   "description": "A hotel backend api",
+  "private": true,
   "scripts": {
     "build": "pnpm clean-build && tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "start": "node build/src/app.js",
@@ -15,7 +16,9 @@
     "postinstall": "prisma generate",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
-  "author": "",
+  "author": {
+    "name": "Anonymous Sherlock"
+  },
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "5.9.1",
