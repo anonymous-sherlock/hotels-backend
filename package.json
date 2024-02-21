@@ -4,7 +4,7 @@
   "description": "A hotel backend api",
   "private": true,
   "scripts": {
-    "build": "pnpm clean-build && tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "start": "node build/src/app.js",
     "dev": "ts-node-dev -r tsconfig-paths/register --transpile-only --no-notify src/app.ts",
     "push": "pnpm prisma db push",
