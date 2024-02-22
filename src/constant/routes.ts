@@ -2,13 +2,23 @@ const appUrl = process.env.APP_URL || 'http://localhost:3000'; // Replace with y
 
 export const DEFAULT_ROUTES = {
   auth: {
-    login: {
-      url: `${appUrl}/api/auth/sign-in`,
-      method: 'POST',
-    },
     register: {
       url: `${appUrl}/api/auth/sign-up`,
       method: 'POST',
+    },
+    login: {
+      credential: {
+        url: `${appUrl}/api/auth/sign-in`,
+        method: 'POST',
+      },
+    },
+    session: {
+      url: `${appUrl}/api/auth/session`,
+      method: 'GET',
+    },
+    logout: {
+      url: `${appUrl}/api/auth`,
+      method: 'POST, PATCH, DELETE',
     },
   },
   hotels: {

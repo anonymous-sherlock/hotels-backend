@@ -25,6 +25,8 @@
     "rootDir": ".",
     "paths": {
       "@/*": ["*"],
+      "@/types*": ["./src/types/*"],
+      "@/exceptions*": ["./src/exceptions/*"]
     }
   },
   "ts-node": {
