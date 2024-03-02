@@ -5,7 +5,7 @@ const authRouter: Router = Router();
 
 authRouter.post('/sign-up', register);
 authRouter.post('/sign-in', login);
-authRouter.get('/session', authenticateSession, getSession);
+authRouter.all('/session', authenticateSession, getSession);
 authRouter.all('/logout', logoutSession);
 // authRouter.get('/google', googleLogin);
 

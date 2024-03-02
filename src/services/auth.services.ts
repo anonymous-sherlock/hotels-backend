@@ -81,8 +81,8 @@ export const login = async (req: express.Request, res: express.Response, next: N
       .cookie('auth.session-token', token, {
         maxAge: 1000 * 60 * 60 * 24 * 7,
         sameSite: 'lax',
-        httpOnly: false,
-        secure: process.env.NODE_ENV === 'production',
+        httpOnly: true,
+        secure: true,
       })
       .status(200)
       .json({ message: 'Login successful', data: { email, token } });
@@ -136,7 +136,7 @@ export const getSession = (req: express.Request, res: express.Response) => {
 export const logoutSession = (req: express.Request, res: express.Response) => {
   const token = req.cookies['auth.session-token'];
   tokenBlacklist.add(token);
-  res.clearCookie('auth.session-token');
+  res.clearCookie('auth.session-token', { path: '/' });
   res.status(200).json({ message: 'Logout successful' });
 };
 // export const googleLogin = async (req: express.Request, res: express.Response) => {

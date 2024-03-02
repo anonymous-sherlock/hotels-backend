@@ -29,6 +29,7 @@ export class InvalidCredentialsError extends HttpException {
     super(401, ErrorCodes.INCORRECT_PASSWORD, 'Invalid email or password', undefined);
   }
 }
+
 export class InvalidTokenError extends HttpException {
   constructor() {
     super(401, ErrorCodes.INVALID_TOKEN, 'Invalid token provided', undefined);
